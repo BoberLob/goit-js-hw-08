@@ -133,28 +133,9 @@ function onGalleryClick(event) {
 };
 // Реализация перелистывания галереи и закрытия с помощью ESC
 const onKeyPressed = event => {
-  if (
-    event.key !== 'Escape' &&
-    event.key !== 'ArrowLeft' &&
-    event.key !== 'ArrowRight'
-  ) {
-    return;
-  }
-
-
-  switch (event.key) {
-    case 'Escape':
-      CloseImg();
-      return;
-
-    case 'ArrowRight':
-      NextImg(1);
-      return;
-
-    case 'ArrowLeft':
-      NextImg(-1);
-      return;
-  }
+    if (event.key == 'Escape') CloseImg();
+    if (event.key == 'ArrowRight') NextImg(1);
+    if (event.key == 'ArrowLeft') NextImg(-1);
 };
 
 gallery.addEventListener('click', onGalleryClick);
