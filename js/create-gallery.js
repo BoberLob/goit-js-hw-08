@@ -64,9 +64,10 @@ const gallery = document.querySelector('.js-gallery'),
 
   lightboxCloseBtn = document.querySelector('[data-action]');
 
-//Function markup gallery
-const galleryItemMarkup = ({ preview, original, description }, index) => {
-  return `<li class='gallery__item'>
+//Create gallery makup
+function galleryItemsMarkup(galleryItems) => {
+  const galleryItemsPalette = galleryItems.map(({ preview, original, description }, index) => 
+  `<li class='gallery__item'>
   <a class='gallery__link' href='${original}'>
     <img
       class='gallery__image'
@@ -76,13 +77,10 @@ const galleryItemMarkup = ({ preview, original, description }, index) => {
       alt='${description}'
     />
   </a>
-</li>`;
-};
-// console.log(galleryItemMarkup(galleryItems[0], 0));
-//Create gallery
-const galleryItemsPalette = galleryItems.map((galleryItem, index) => galleryItemMarkup(galleryItem, index)).join('');
-// console.log(galleryListMarkup);
+</li>`).join('');
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
+};
+
 
 function OpenImg(photoIndex) {
   const currentPhoto = gallery.querySelector(
@@ -138,4 +136,5 @@ const onKeyPressed = event => {
     if (event.key == 'ArrowLeft') NextImg(-1);
 };
 
+galleryItemsMarkup(galleryItems);
 gallery.addEventListener('click', onGalleryClick);
