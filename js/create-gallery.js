@@ -102,8 +102,8 @@ function OpenImg(photoIndex) {
 function NextImg(move) {
   let nextIndex = parseInt(lightbox.dataset.index) + move;
   //console.log(lightbox.dataset.index);
-  if (nextIndex < 0) nextIndex = 0;
-  if (nextIndex > lastIndexGallery) nextIndex = lastIndexGallery;
+  if (nextIndex < 0) nextIndex = lastIndexGallery;
+  if (nextIndex > lastIndexGallery) nextIndex = 0;
 
   lightbox.dataset.index = nextIndex;
   const nextPhoto = gallery.querySelector(`[data-index='${nextIndex}']`);
