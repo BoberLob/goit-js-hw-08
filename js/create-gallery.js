@@ -81,6 +81,12 @@ function galleryItemsMarkup(galleryItems) => {
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
 
+// Реализация перелистывания галереи и закрытия с помощью ESC
+const onKeyPressed = event => {
+    if (event.key == 'Escape') CloseImg();
+    if (event.key == 'ArrowRight') NextImg(1);
+    if (event.key == 'ArrowLeft') NextImg(-1);
+};
 
 function OpenImg(photoIndex) {
   const currentPhoto = gallery.querySelector(
@@ -129,12 +135,7 @@ function onGalleryClick(event) {
 
   OpenImg(targetPhoto.dataset.index);
 };
-// Реализация перелистывания галереи и закрытия с помощью ESC
-const onKeyPressed = event => {
-    if (event.key == 'Escape') CloseImg();
-    if (event.key == 'ArrowRight') NextImg(1);
-    if (event.key == 'ArrowLeft') NextImg(-1);
-};
+
 
 galleryItemsMarkup(galleryItems);
 gallery.addEventListener('click', onGalleryClick);
