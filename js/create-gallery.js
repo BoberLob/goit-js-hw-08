@@ -77,8 +77,9 @@ function galleryItemsMarkup(array) {
       data-source='${original}'
       data-index='${index}'
       alt='${description}'
-    /></a></li>`});
-  console.log(array);
+    /></a></li>`})
+  .join('');
+  console.log(galleryItemsPalette);
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
 galleryItemsMarkup(galleryItems);
