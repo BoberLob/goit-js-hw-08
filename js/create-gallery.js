@@ -78,6 +78,7 @@ function galleryItemsMarkup(galleryItems) => {
     />
   </a>
 </li>`).join('');
+  console.log(galleryItemsPalette);
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
 
