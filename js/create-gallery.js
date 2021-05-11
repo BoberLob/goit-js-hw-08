@@ -66,7 +66,7 @@ const gallery = document.querySelector('.js-gallery'),
 
 //Create gallery makup
 function galleryItemsMarkup(array) {
-  console.log(array);
+  
   const galleryItemsPalette = array
   .map(({ preview, original, description }, index) => {
   `<li class='gallery__item'>
@@ -78,8 +78,8 @@ function galleryItemsMarkup(array) {
       data-index='${index}'
       alt='${description}'
     /></a></li>`});
-  
-gallery.insertAdjacentHTML('beforeend', galleryItemsPalette.join(''));
+  console.log(array);
+gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
 galleryItemsMarkup(galleryItems);
 // Реализация перелистывания галереи и закрытия с помощью ESC
