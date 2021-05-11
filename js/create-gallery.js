@@ -66,7 +66,8 @@ const gallery = document.querySelector('.js-gallery'),
 
 //Create gallery makup
 function galleryItemsMarkup(galleryItems) => {
-  const galleryItemsPalette = galleryItems.map(({ preview, original, description }, index) => 
+  const galleryItemsPalette = galleryItems
+  .map(({ preview, original, description }, index) => 
   `<li class='gallery__item'>
   <a class='gallery__link' href='${original}'>
     <img
@@ -75,8 +76,8 @@ function galleryItemsMarkup(galleryItems) => {
       data-source='${original}'
       data-index='${index}'
       alt='${description}'
-    /></a></li>`
-).join('');
+    /></a></li>`)
+  .join('');
   console.log(galleryItemsPalette);
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
