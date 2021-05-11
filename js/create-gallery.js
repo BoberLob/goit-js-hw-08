@@ -65,8 +65,9 @@ const gallery = document.querySelector('.js-gallery'),
   lightboxCloseBtn = document.querySelector('[data-action]');
 
 //Create gallery makup
-function galleryItemsMarkup(galleryItems) {
-  const galleryItemsPalette = galleryItems
+function galleryItemsMarkup(array) {
+  console.log(array);
+  const galleryItemsPalette = array
   .map(({ preview, original, description }, index) => {
   `<li class='gallery__item'>
   <a class='gallery__link' href='${original}'>
@@ -77,7 +78,7 @@ function galleryItemsMarkup(galleryItems) {
       data-index='${index}'
       alt='${description}'
     /></a></li>`});
-  console.log(galleryItemsPalette);
+  
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette.join(''));
 };
 galleryItemsMarkup(galleryItems);
