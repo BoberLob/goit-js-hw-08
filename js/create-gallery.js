@@ -75,9 +75,8 @@ function galleryItemsMarkup(galleryItems) => {
       data-source='${original}'
       data-index='${index}'
       alt='${description}'
-    />
-  </a>
-</li>`).join('');
+    /></a></li>`
+).join('');
   console.log(galleryItemsPalette);
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
