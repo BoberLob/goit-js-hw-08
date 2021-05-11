@@ -81,7 +81,7 @@ function galleryItemsMarkup(galleryItems) => {
   console.log(galleryItemsPalette);
 gallery.insertAdjacentHTML('beforeend', galleryItemsPalette);
 };
-
+galleryItemsMarkup(galleryItems);
 // Реализация перелистывания галереи и закрытия с помощью ESC
 const onKeyPressed = event => {
     if (event.key == 'Escape') CloseImg();
@@ -138,5 +138,5 @@ function onGalleryClick(event) {
 };
 
 
-galleryItemsMarkup(galleryItems);
+
 gallery.addEventListener('click', onGalleryClick);
